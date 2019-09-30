@@ -1,5 +1,6 @@
-import cuncsd_sq as csd
+#import cuncsd_sq as csd
 from qubiter.UnitaryMat import *
+from pycsd import cs_decomp
 
 
 class CS_Decomp:
@@ -123,46 +124,26 @@ class CS_Decomp:
                 hdim = dim >> 1  # half dimension
 
                 p = hdim
-                # x11 = np.copy(mat[0:hdim, 0:hdim], 'C')
-                # x12 = np.copy(mat[0:hdim, hdim:dim], 'C')
-                # x21 = np.copy(mat[hdim:dim, 0:hdim], 'C')
-                # x22 = np.copy(mat[hdim:dim, hdim:dim], 'C')
 
-                x11 = mat[0:hdim, 0:hdim]
-                x12 = mat[0:hdim, hdim:dim]
-                x21 = mat[hdim:dim, 0:hdim]
-                x22 = mat[hdim:dim, hdim:dim]
+#                 x11 = mat[0:hdim, 0:hdim]
+#                 x12 = mat[0:hdim, hdim:dim]
+#                 x21 = mat[hdim:dim, 0:hdim]
+#                 x22 = mat[hdim:dim, hdim:dim]
 
-                # print('mat\n', mat)
-                # print('x11\n', x11)
-                # print('x12\n', x12)
-                # print('x21\n', x21)
-                # print('x22\n', x22)
-                x11, x12, x21, x22, theta, u1, u2, v1t, v2t, \
-                work, rwork, iwork, info = \
-                    csd.cuncsd(p, x11, x12, x21, x22, lwork=-1, lrwork=-1,
-                               trans='F')
-                # print('x11\n', x11)
-                # print('x12\n', x12)
-                # print('x21\n', x21)
-                # print('x22\n', x22)
+#                 x11, x12, x21, x22, theta, u1, u2, v1t, v2t, \
+#                 work, rwork, iwork, info = \
+#                     csd.cuncsd(p, x11, x12, x21, x22, lwork=-1, lrwork=-1,
+#                                trans='F')
 
-                lw = math.ceil(work[0].real)
-                lrw = math.ceil(rwork[0].real)
-                # print("work query:", lw)
-                # print("rwork query:", lrw)
-                x11, x12, x21, x22, theta, u1, u2, v1t, v2t, \
-                work, rwork, iwork, info = \
-                    csd.cuncsd(p, x11, x12, x21, x22, lwork=lw, lrwork=lrw,
-                               trans='F')
-                # print('info', info)
-                # print('u1 continguous', u1.flags.contiguous)
-                # u1 = np.ascontiguousarray(u1)
-                # u2 = np.ascontiguousarray(u2)
-                # v1t = np.ascontiguousarray(v1t)
-                # v2t = np.ascontiguousarray(v2t)
-                # print('u1 continguous', u1.flags.contiguous)
+#                 lw = math.ceil(work[0].real)
+#                 lrw = math.ceil(rwork[0].real)
 
+#                 x11, x12, x21, x22, theta, u1, u2, v1t, v2t, \
+#                 work, rwork, iwork, info = \
+#                     csd.cuncsd(p, x11, x12, x21, x22, lwork=lw, lrwork=lrw,
+#                                trans='F')
+
+                u1, u2, v1t, v2t, theta = cs_decomp(mat, p, p)
                 left_mats.append(u1)
                 left_mats.append(u2)
                 central_mats.append(theta)
@@ -202,5 +183,3 @@ if __name__ == "__main__":
         print('err=', err)
 
     main()
-
-
