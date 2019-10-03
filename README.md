@@ -27,7 +27,7 @@ In order to install this forked version of Qubiter follow these steps:
 git clone https://github.com/yourball/qubiter.git
 
 2) Change to the source directory and run Qubiter installation:
-pip install .
+"``pip install .``"
 
 3) Install PYCSD package (Python wrapper of cosine-sine decomposition originally written for fortran77).
 To do so clone source files: git clone https://github.com/nice-tools/pycsd.git
