@@ -2,7 +2,7 @@
 
 ## Tutorial
 
-The following Jupyter notebook is a 
+The following Jupyter notebook is a
 good introduction to Qubiter's basic features. Other notebooks
 in Qubiter's jupyter_notebook folder
 discuss more advanced features:
@@ -13,39 +13,31 @@ The following automatically generated notebook summarizes all other notebooks:
 
 * https://nbviewer.jupyter.org/github/artiste-qb-net/qubiter/blob/master/qubiter/jupyter_notebooks/SUMMARY.ipynb
 
-See also, at the readthedocs.org 
-website, the beautiful documentation generated automatically by the Sphinx 
+See also, at the readthedocs.org
+website, the beautiful documentation generated automatically by the Sphinx
 software based on Qubiter's docstrings and code:
 
 * https://qubiter.readthedocs.io/en/latest/
 
 ## Installation
 
-The simplest thing that avoids 
-many of the installation hassles is to get an account 
-on our Amazon cloud service
-www.bayesforge.com. It's free for one year. 
- Bayesforge already has 
-all of Python and Qubiter installed (although you may need to 
-update Qubiter using Git).
- Bayesforge is also available on the Tencent cloud.
- 
-Of  course, you can also clone the latest version or update
-an older version of Qubiter on your computer
-from this repo by using Git commands.
+In order to install this forked version of Qubiter follow these steps:
 
-Alternatively, you can install an older but more stable version
- of Qubiter from the Python package
- manager `pip` using:
-```
-pip install qubiter --user
-```
+1) Clone Qubiter source files from github:
+git clone https://github.com/yourball/qubiter.git
 
-If you are using a Jupyter notebook, use:
-```
-!pip install qubiter --user
-```
-and restart the kernel.
+2) Change to the source directory and run Qubiter installation:
+pip install .
+
+3) Install PYCSD package (Python wrapper of cosine-sine decomposition originally written for fortran77).
+To do so clone source files: git clone https://github.com/nice-tools/pycsd.git
+And run from the source folder:
+pip install .
+
+4) Install gfortran since pycsd package heavily relies on fortran77 compiler.
+On Ubuntu run: sudo apt-get install gfortran
+On Mac go to https://www.webmo.net/support/fortran_osx.html and follow steps for g77 compiler installation.
+
 
 ## What is Qubiter?
 
