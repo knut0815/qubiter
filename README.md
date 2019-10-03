@@ -34,7 +34,7 @@ To do so clone source files: git clone https://github.com/nice-tools/pycsd.git
 And run from the source folder:
 ``pip install .``
 
-4) Install gfortran since pycsd package heavily relies on fortran77 compiler.
+4) Install gfortran since pycsd package heavily relies on fortran77 compiler.\n
 On Ubuntu run:
 ``sudo apt-get install gfortran``
 
