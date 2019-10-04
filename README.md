@@ -1,4 +1,4 @@
-# Qubiter at GitHub
+'# Qubiter at GitHub
 
 ## Tutorial
 
@@ -37,8 +37,6 @@ On Mac go to https://www.webmo.net/support/fortran_osx.html and follow steps for
 To do so clone source files: git clone https://github.com/nice-tools/pycsd.git
 And run from the source folder:
 ``pip install .``
-
-
 
 
 ## What is Qubiter?
