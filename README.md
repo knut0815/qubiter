@@ -61,10 +61,14 @@ All of Qubiter at GitHub except for the contents of the quantum_CSD_compiler fol
 
 The contents of Qubiter's quantum_CSD_compiler folder are licensed under the GPLv2 (Linux) license.
 
-## Contributors
+## Contributors (Core Qubiter)
 
 (Alphabetical Order)
 * Dekant, Henning
 * Tregillus, Henry
 * Tucci, Robert
 * Yin, Tao
+
+## Modified by
+
+* Yaroslav Kharkov
