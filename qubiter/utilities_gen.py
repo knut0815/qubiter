@@ -362,7 +362,7 @@ def preface(a_str):
     path1 = os.path.split(path1)[0]
     # using os.path instead of posixpath led to errors in open(file_path) if
     # file_path had directories with blank spaces (whitespace)
-    return posixpath.normpath(path1 + '/io_folder/' + a_str)
+    return posixpath.normpath(path1 + '/quantum_CSD_compiler/io_folder/' + a_str)
 
 
 if __name__ == "__main__":
