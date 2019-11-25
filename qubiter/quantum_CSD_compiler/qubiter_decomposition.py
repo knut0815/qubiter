@@ -101,7 +101,7 @@ if __name__ == "__main__":
     # into DIAG and MP_Y lines. Next we print the Picture file that was created.
 
 
-    file = "./" + file_prefix + "_2_ZLpic.txt"
+    file = './qubiter/quantum_CSD_compiler/'+file_prefix + "_2_ZLpic.txt"
     df = pd.read_csv(file, delim_whitespace=True, header=None)
 
 
