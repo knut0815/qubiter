@@ -355,7 +355,7 @@ def preface(a_str):
 
     """
     if a_str[0] == '_':
-        return a_str
+        return '/io_folder/'+a_str
     # this is something/qubiter/qubiter/utilities_gen
     path1 = find_path_to_qubiter()
     # this is something/qubiter/qubiter
